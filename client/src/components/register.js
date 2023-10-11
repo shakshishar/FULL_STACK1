@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import '../assets/styles/register.css';
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -56,10 +57,14 @@ const Signin = () => {
   };
 
   return (
-    <div>
+    <div className='body-container'>
+   
+       
+    <div className='signup-container'> 
+   
+      <form onSubmit={handleSubmit} encType="multipart/form-data" className='form-box'>
       <h2>Signup</h2>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
-        <div>
+        <div className='input-box'>
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -70,7 +75,7 @@ const Signin = () => {
             required
           />
         </div>
-        <div>
+        <div className='input-box'>
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -81,7 +86,7 @@ const Signin = () => {
             required
           />
         </div>
-        <div>
+        <div className='input-box'>
           <label htmlFor="phone">Phone</label>
           <input
             type="text"
@@ -92,7 +97,7 @@ const Signin = () => {
             required
           />
         </div>
-        <div>
+        <div className='input-box'>
           <label htmlFor="work">Work</label>
           <input
             type="text"
@@ -103,7 +108,7 @@ const Signin = () => {
             required
           />
         </div>
-        <div>
+        <div className='input-box'>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -114,7 +119,7 @@ const Signin = () => {
             required
           />
         </div>
-        <div>
+        <div className='input-box'>
           <label htmlFor="cpassword">Confirm Password</label>
           <input
             type="password"
@@ -125,9 +130,10 @@ const Signin = () => {
             required
           />
         </div>
-        <div>
+        <div className='input-box'>
           <label htmlFor="image">Image</label>
-          <input
+          <div className='choose-image'>
+          <input  
             type="file"
             id="image"
             name="image"
@@ -135,13 +141,16 @@ const Signin = () => {
             onChange={handleChange}
             required
           />
+         </div>
         </div>
+        <div className='btn'>
         <button type="submit">Register</button>
-      
-       
+        </div>
       </form>
+    </div>
     </div>
   );
 };
 
 export default Signin;
+
